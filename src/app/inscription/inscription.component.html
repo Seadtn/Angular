@@ -1,0 +1,76 @@
+
+  <nav class="navbar navbar-expand-lg navbar-dark "style="background-color: #1F3044;" >
+    <a class="nav-link btn"style="background-color: #ff735c; color: #1d2e42;" routerLink="/Accueil" routerLinkActive="active"><-</a>
+  <li class="nav-item">
+    <a class="nav-link position-absolute text-white top-0 start-50 translate-middle-x display-6" >Inscription</a>
+  </li>
+</nav>
+    <div class="col-md-6 offset-md-3 mt-5">
+        <h2  class="text-center link-danger">tous les champs sont obligatoires*</h2>
+        <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erreur de Creation!</strong> Compte existe deja ou Verifier Vos information.
+            <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <form  (ngSubmit)="onSubmit()" ngNativeValidate>
+        <div class="form-group">
+            <label for="">Nom</label>
+            <input type="text" class="form-control" id="nom" [(ngModel)]="client.nom" name="nom" required>
+        </div>
+        <div class="form-group">
+            <label for="">Prénom</label>
+            <input type="text" class="form-control" id="prenom" [(ngModel)]="client.prenom" name="prenom" required>
+        </div>
+        <div class="form-group">
+            <label for="">Date de naissance</label>
+            <input type="date" class="form-control" [(ngModel)]="client.date_naissance" name="date_naissance" max="2001-01-01" required />
+        </div>
+        <div class="row">
+          <div class="col">
+        <div class="form-group">
+            <label for="">CIN</label>
+            <input type="text" class="form-control" id="cin" [(ngModel)]="client.cin" name="cin" maxlength="8" minlength="8" required>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+            <label for="">Ville</label>
+            <input type="text" class="form-control" id="vile" [(ngModel)]="client.ville" name="ville" required>
+        </div>
+        
+      </div>
+      </div>
+        <div class="form-group">
+            <label for="">Titre</label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="client.titre" name="titre" required>
+                <option disabled selected>--Choisir Votre titre--</option>
+                <option value="ingenieur">Ingenieur</option>
+                <option value="niveau Mastere">niveau Mastere</option>
+                <option value="Technicien">Technicien</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label for="">E-mail</label>
+        <div class=" input-group mb-3">
+            
+            <input type="email" class="form-control" id="email" [(ngModel)]="client.email" name="email" required>
+            <span class="input-group-text" id="basic-addon2">@example.com</span>
+        </div>
+        </div>
+        <div class="form-group">
+            <label for="">Mot de passe</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="client.password" name="password" minlength="8" required>
+        </div>
+        <div class="text-center mt-3">
+          <button class="btn mt-2"  style="background-color: #ff735c; color: #1d2e42;" type="submit">S'inscrire</button>
+          </div>
+        </form>
+        </div>
+        <div>
+        <footer class="text-center text-lg-start fixed-bottom" style="background-color: #1F3044;">
+          <div class="text-center text-white p-3" style="background-color: #1F3044;">
+            ALL Rights Reserved 2022 @CopyRights
+          </div>
+        </footer>
+      </div>

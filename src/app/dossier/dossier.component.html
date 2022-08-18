@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark "style="background-color: #1F3044;" >
+          <li class="nav-item">
+            <button (click)="return()" class="nav-link  btn   top-0 start-0" style="background-color: #ff735c; color:aliceblue;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+            </svg></button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-absolute top-0 start-50 translate-middle-x display-6 text-white" >Dossier Num°{{NumDossier}}</a>
+        </li>
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a *ngIf="true" class="nav-link position-absolute top-0 end-0"><button class="btn" (click)="logout()" style="background-color: #ff735c;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+              </svg></button></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+        <div class="container shadow">
+  <div class="row mt-5">
+    <div class="col-3"><p class="blockquote ml-4" style="color: #ff735c;">&nbsp; Nom: <i style="color:#1F3044; ">{{nom}}</i></p></div>
+    <div class="col-3"><p class="blockquote" style="color: #ff735c;">Prénom: <i style="color:#1F3044; ">{{prenom}}</i></p></div>
+    <div class="col-3"><p class="blockquote" style="color: #ff735c;">CIN: <i style="color:#1F3044; ">{{cin}}</i></p></div>
+    <div class="col-3"><p class="blockquote" style="color: #ff735c;">Titre: <i style="color:#1F3044; ">{{titre}}</i></p></div>
+  </div>
+<table class="table table-bordered mt-4 table-striped">
+  <thead>
+    <th scope="col">#</th>
+    <th scope="col">Question</th>
+    <th scope="col">Reponse</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let questions of q; let i = index">
+      <td >{{i+1}} </td>
+      <td >
+        {{q[i].ques}}
+      </td>
+      <td >{{rf[i]}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="alert mt-4" style="background-color:#1F3044; ">
+    <p class="text-center  display-6 text-white"> Voir le fichier disjointe (CV)</p>
+    <a [href]="pdf1+id" class="text-decoration-none"><button (click)="getCV()" class="btn btn-lg mx-auto d-block" style="background-color:#ff735c ;"> Voir CV</button></a>
+</div>
+</div>
+<footer class="text-center text-lg-start fixed-bottom" style="background-color: #1F3044;">
+  <div class="text-center text-white p-3" style="background-color: #1F3044;">
+    ALL Rights Reserved 2022 @CopyRights
+  </div>
+</footer>

@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark "style="background-color: #1F3044;" >
+      <a class="nav-link btn"style="background-color: #ff735c; color: #1d2e42;" routerLink="/Accueil" routerLinkActive="active"><-</a>
+    <li class="nav-item">
+      <a class="nav-link position-absolute text-white top-0 start-50 translate-middle-x display-6" >Connexion</a>
+    </li>
+</nav>
+    <div class="container-fluid h-custom" style="margin-top:  41px ;">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="assets/img/login.png"
+              class="img-fluid mx-auto d-block" alt="Sample image">
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Erreur!</strong> adresse mail ou mot de passe  entré(e) est incorrect(e).
+              <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div *ngIf="Success" class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Enregistrer Votre Clé de recuperation!</strong> {{token}}
+              <button type="button" class="close" (click)="closeMessage()" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div *ngIf="updated" class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Félécitation!</strong> votre mot de passe a été réinitialisé avec Success.
+              <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form (ngSubmit)="Login()" ngNativeValidate>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Adresse Email</label>
+                <input type="email" [(ngModel)]="client.email" id="form3Example3" name="email" class="form-control form-control-lg"
+                  placeholder="Entrer votre adresse mail" required/>
+              </div>
+              <div class="form-outline mb-3">
+                <label class="form-label" for="form3Example4">Mot de passe</label>
+               <input type="password" class="form-control" [(ngModel)]="client.password" id="password" placeholder="Entrer votre mot de passe" name="password"  minlength="8" required >
+              </div>
+    
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check mb-0">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                  <label class="form-check-label" for="form2Example3">
+                    Remember me
+                  </label>
+                </div>
+                <a routerLink="/Forgot" routerLinkActive="active" class="text-body">Mot de passe oublié?</a>
+              </div>
+    
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button  class="btn  btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #ff735c; " type="submit">Login</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Je n'ai pas encore de compte ? <a href="#!"
+                    class="link-danger" routerLink="/Inscription" routerLinkActive="active">Je crée mon compte</a></p>
+              </div>
+    
+            </form>
+          </div>
+        </div>
+      </div>
+ <footer class="text-center text-lg-start fixed-bottom" style="background-color: #1F3044;">
+      <div class="text-center text-white p-3" style="background-color: #1F3044;">
+        ALL Rights Reserved 2022 @CopyRights
+      </div>
+    </footer>

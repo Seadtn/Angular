@@ -1,0 +1,107 @@
+ <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #1F3044" >
+        <a class="nav-link text display-6" routerLink="/Accueil" routerLinkActive="active" style="color:white">Accueil</a>
+    
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a *ngIf="btn1" class="nav-link position-absolute top-0 end-0  mt-3" routerLink="/Inscription" routerLinkActive="active"><button class="btn" style="background-color: #ff735c;color:black;">s'inscrire</button></a>
+            <a *ngIf="btn3" class="nav-link position-absolute top-0 end-0 mt-3" routerLink="/UserPage" routerLinkActive="active"><button class="btn" style="background-color: #ff735c; color:black;">Accéder à votre compte</button></a>
+            <a *ngIf="btn4" class="nav-link position-absolute top-0 end-0  mt-3" routerLink="/AdminPage" routerLinkActive="active"><button class="btn" style="background-color: #ff735c;color:black;">Accéder à votre compte</button></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid " >
+      <div class="row  mb-2 shadow imgback" style="background-color: #234872;">
+       <div class="col">
+        <a *ngIf="btn2" routerLink="/Login" routerLinkActive="active" class="btn  btn-lg d-none d-xxl-block d-lg-block d-xl-block col-2 d-block mx-auto" style="background-color: #ff735c; margin-top:250px;color:black;">Connexion</a>
+        <a *ngIf="btn2" routerLink="/Login" routerLinkActive="active" class="btn  btn-lg d-xxl-none d-xl-none d-lg-none d-block mx-auto" style="background-color: #ff735c; margin-top:100px;">Connexion</a>
+        <img *ngIf="logo" [src]="image" class="rounded-circle mx-auto d-block img-fluid " alt="Cinque Terre" width="600px" height="300px" style="margin-top:50px;">
+        <p class="text display-5 text-center" style="color: white;">C'est un concours {{type}} au sein de {{organisme}}</p>
+        <p class="text display-5 text-center" style="color: #ff735c;">de {{dateDebut}} au {{dateFin}}</p>
+        </div>
+        <div class="col-4 d-none d-xxl-block">
+        <img src="assets/img/back.png" alt="" class="rounded mx-auto 	  img-fluid" style="margin-top: 30px ;" height="400px" width="500px">
+        </div>
+     </div>
+     <div class="row ">
+      
+      <div class="col  d-none d-xxl-block mt-3">
+        <div class="col-8 mx-auto d-block">
+        <h4 style="padding: 20px 0px 0px; border-top-color: #1F3044 !important; border-top-width: 2px !important; border-top-style: solid !important;" data-mce-style="border-top: 2px solid #41a6c6!important; padding: 20px 0 0px;"></h4>
+        </div>
+      <div class="card mx-auto d-block"style="width: 25rem;height:10rem; " >
+        <img class="card-img" src="assets/img/communique.jpg" alt="a snow-capped mountain range" />
+        <div class="card-img-overlay text-white">
+          <h2 class="card-title">Communique  de Concours</h2>
+          <br>
+          <a href="#" class="btn mt-5" style="background-color: #ff735c;">->Communique</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-5  d-none d-xxl-block mt-3">
+        <div class="col-4 mx-auto d-block">
+          <h4 style="padding: 20px 0px 0px; border-top-color: #ff735c !important; border-top-width: 2px !important; border-top-style: solid !important;" data-mce-style="border-top: 2px solid #41a6c6!important; padding: 20px 0 0px;"></h4>
+          </div>        
+          <div class="card mx-auto d-block" style="width: 21rem;height:10rem; " >
+          <img class="card-img" src="assets/img/procedure.jpg" alt="a snow-capped mountain range" />
+          <div class="card-img-overlay ">
+            <h2 class="card-title text-black">PROCÉDURE DE DÉPÔT</h2>
+            <br>
+            <a  class="btn mt-5" routerLink="/procedure" routerLinkActive="active" style="background-color: #ff735c;">->PROCÉDURE DE DÉPÔT</a>
+          </div>
+        </div>
+        </div>
+        <div class="col d-none d-xxl-block mt-3">
+          <div class="col-7 mx-auto d-block">
+            <h4 style="padding: 20px 0px 0px; border-top-color: #1F3044 !important; border-top-width: 2px !important; border-top-style: solid !important;" data-mce-style="border-top: 2px solid #41a6c6!important; padding: 20px 0 0px;"></h4>
+            </div>          
+            <div class="card  mx-auto d-block" style="width: 22.5rem;height:10rem; " >
+            <img class="card-img" src="assets/img/card3.PNG" alt="" />
+            <div class="card-img-overlay text-white">
+              <h2 class="card-title">Organisme</h2>
+              <br>
+              <br>
+              <a [href]="url" class="btn mt-3" style="background-color: #ff735c;">->Site Web</a>
+            </div>
+          </div>
+          </div>
+     </div>
+    <div class="d-xxl-none ">
+      <div class="col">
+        <div class="card " >
+          <img class="card-img" src="assets/img/communique.jpg" alt="a snow-capped mountain range" style="height: 367px;"/>
+          <div class="card-img-overlay text-white">
+            <h2 class="card-title">Communique  de Concours</h2>
+            <a href="#" class="btn " style="background-color: #ff735c;">->Communique</a>
+          </div>
+        </div>
+        </div>
+      <div class="col">
+        <div class="card " >
+          <img class="card-img" src="assets/img/procedure.jpg" alt="a snow-capped mountain range" style="height: 367px;"/>
+          <div class="card-img-overlay">
+            <h2 class="card-title text-black">PROCÉDURE DE DÉPÔT</h2>
+            <a  class="btn " routerLink="/procedure" routerLinkActive="active" style="background-color: #ff735c;">->PROCÉDURE DE DÉPÔT</a>
+          </div>
+        </div>
+        </div>
+      <div class="col">
+        <div class="card " >
+          <img class="card-img" src="assets/img/card3.PNG" alt="" style="height: 367px;"/>
+          <div class="card-img-overlay text-white">
+            <h2 class="card-title">Organisme</h2>
+            <a [href]="url" class="btn " style="background-color: #ff735c;">->Site Web</a>
+          </div>
+     </div>
+    </div>
+    </div>
+    <footer class="text-center text-lg-start fixed-bottom" style="background-color: #1F3044;">
+      <div class="text-center text-white p-3" style="background-color: #1F3044;">
+        ALL Rights Reserved 2022 @CopyRights-{{nomOr}}
+      </div>
+    </footer>

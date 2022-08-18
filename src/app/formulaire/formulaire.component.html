@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark "style="background-color: #1F3044;" >
+      <li class="nav-item">
+        <a  class="nav-link btn"style="background-color: #ff735c; color: #1d2e42;" routerLink="/AdminPage" routerLinkActive="active"><-</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link position-absolute top-0 start-50 translate-middle-x display-6 text-white" >Version beta de Formulaire</a>
+    </li>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   
+    <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a *ngIf="true" class="nav-link position-absolute top-0 end-0"><button class="btn" (click)="logout()" style="background-color: #ff735c;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+          </svg></button></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <img *ngIf="logo" [src]="image" class="rounded-circle center " alt="Cinque Terre" height="100px">
+<div class="container">
+<h2  class="text-center link-danger">tous les champs sont obligatoires*</h2>
+
+<form  class="mt-5 col-md-9 offset-md-3 " style="margin: left 400px; " ngNativeValidate>
+<div class="row mt-2">
+   <div class="col col-md-8 mt-2" *ngFor="let questions of q; let i = index">
+   <label for="">{{i+1}}:{{q[i].ques}}</label>
+   <input  type="text" class="form-control"   name="question{{i}}"  required>
+  </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col col-md-8 mt-2" >
+      
+            <label for="">Votre CV</label><p class="text-danger"> avec une extension (pdf)</p>
+            <input  type="file" class="form-control"  name="logo"  accept="application/pdf" required>
+           </div>
+   </div>
+  <div class="col-md-10 offset-md-3  mt-3">
+   <button class="btn mt-2 "  style="background-color: #ff735c; color: #1d2e42;" type="submit">Envoyer</button>
+   </div>
+</form>
+
+</div>
+<footer class="text-center text-lg-start fixed-bottom" style="background-color: #1F3044;">
+  <div class="text-center text-white p-3" style="background-color: #1F3044;">
+    ALL Rights Reserved 2022 @CopyRights
+  </div>
+</footer>

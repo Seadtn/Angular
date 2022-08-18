@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark "style="background-color: #1F3044;" >
+      <a  class="nav-link btn"style="background-color: #ff735c; color: #1d2e42;" routerLink="/UserPage" routerLinkActive="active"><-</a>
+    <li class="nav-item">
+      <a class="nav-link position-absolute text-white top-0 start-50 translate-middle-x display-6" >Modifier vos reponses</a>
+    </li>
+</nav>
+    <img [src]="image" class="rounded-circle center " alt="Cinque Terre" height="100px">
+    <div class="container shadow">
+      <p class="text-center display-5">Dossier Num°{{NumDossier}}</p>
+    <form class=" mt-5" (ngSubmit)="modif()" ngNativeValidate>
+        <div class="row form-group">
+        <div class="col">
+              <h2 *ngFor="let questions of q; let y = index" class="mt-3">{{y+1}}: {{q[y].ques}}</h2>
+        </div>
+        <div class="col">
+          <div  *ngFor="let x of rep.reponses; let i = index;trackBy: trackByFn">
+              <input  type="text"   class="form-control mt-3" id="reponses{{i}}"  name="reponses{{i}}" [(ngModel)]="rep.reponses[i]" maxlength="100"required>
+          </div>
+        </div>
+    </div>
+    <button class="btn mt-3 mx-auto d-block"  style="background-color: #ff735c; color: #1d2e42;" type="submit">Modifier</button>
+    </form>
+    <div class="alert mt-5 " style="background-color:#1F3044; ">
+        <p class="text-center  display-6 text-white"> Voir le fichier disjointe (CV)</p>
+        <a [href]="pdf1+id" class="text-decoration-none"><button (click)="getCV()" class="btn btn-lg voir mx-auto d-block" style="background-color:#ff735c ;"> Voir CV</button></a>
+    </div>
+</div>
+<footer class="text-center text-lg-start fixed-bottom" style="background-color: #1F3044;">
+  <div class="text-center text-white p-3" style="background-color: #1F3044;">
+    ALL Rights Reserved 2022 @CopyRights
+  </div>
+</footer>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark "style="background-color: #1F3044;" >
+      <a class="nav-link btn"style="background-color: #ff735c; color: #1d2e42;" routerLink="/Accueil" routerLinkActive="active"><-</a>
+    <li class="nav-item">
+      <a class="nav-link position-absolute text-white top-0 start-50 translate-middle-x display-6" >Réinitialiser votre mot de passe</a>
+    </li>
+  </nav>
+    <div class="containner" style="margin-top:150px ;">
+      <div class="row">
+      <div class="text-center">
+       <img class="text-center" src="assets/img/forgot.png" alt="" height="150">
+       </div>
+          <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          <div class="col-md-4 col-sm-4 col-xs-12 shadow-sm p-3 mb-5  rounded border-warning">
+          <form  ngNativeValidate (ngSubmit)="verifStep1()" *ngIf="step ==1 "> 
+       <div class="mb-3 form-group">
+        <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Erreur!</strong> Votre Numreo de CIN est Incorrect.
+          <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      
+        <label  class="form-label">Votre Numero de CIN</label>
+      <input type="text" class="form-control" [(ngModel)]="client.cin" id="cin" placeholder="00000000" name="cin" maxlength="8" minlength="8" required  >
+      <div class="text-center mt-3">
+        <button type="submit"  class="btn"style="background-color: #ff735c;" name="submit">Suivant</button>
+      </div>
+      </div>
+    </form>
+         <form *ngIf="step ==2" ngNativeValidate (ngSubmit)="verifStep2()" >
+          <div >
+        <div class="mb-3 form-group">
+          <div *ngIf="alert2" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erreur!</strong> Votre Clé de Récupération est Incorrect.
+            <button type="button" class="close" (click)="closeAlert()" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <label  class="form-label">Donnez Clé de Récupération</label>
+        <input type="text" class="form-control" id="token"  placeholder="XXXX-XXXX-XXXX-XXXX-XXXX"  [(ngModel)]="crt.token" name="token"  minlength="30" required >
+        </div>
+        <div class="text-center mt-3">
+            <button type="submit" class="btn"style="background-color: #ff735c;" name="submit">Suivant</button>
+            </div>
+          </div>
+        </form>
+        <form *ngIf="step==3" ngNativeValidate (ngSubmit)="verifStep3()">
+            <div >
+          <div class="mb-3 form-group">
+            <label  class="form-label">Donnez votre noveau mot de passe</label>
+          <input type="password" class="form-control" [(ngModel)]="client.password" id="password" placeholder="#################" name="password"  minlength="8" required >
+          </div>
+          <div class="text-center mt-3">
+              <button type="submit" class="btn"style="background-color: #ff735c;" name="submit">Changer le Mot de passe</button>
+              </div>
+            </div> 
+          </form>
+      </div>
+  </div>
+  <footer class="text-center text-lg-start fixed-bottom" style="background-color: #1F3044;">
+    <div class="text-center text-white p-3" style="background-color: #1F3044;">
+      ALL Rights Reserved 2022 @CopyRights
+    </div>
+  </footer>

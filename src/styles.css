@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+.footer{
+  position: absolute;
+  bottom: 0;
+  
+  width:  auto;
+  height: 70px;
+  background-color: #1F3044;
+  text-align: center;
+  color: white;
+}
+.login{
+    top: 0;
+    left:0;
+    right:0;
+    margin-top:300px ;
+    margin-left: 370px;
+}
+.logo{
+  top: 0;
+  left:0;
+  right:0;
+  margin-top:100px ;
+  margin-left: 300px;
+}
+.voir{
+  top: 0;
+  left:0;
+  right:0;
+  margin-left: 575px;
+}
+.shadow{
+  box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+}
+.btne{
+   margin-left: 600px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
